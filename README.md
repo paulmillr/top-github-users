@@ -5,10 +5,10 @@
 ## Usage
 
 ```bash
-    # Download data.
-    make download
-    # Generate stats.
-    make stats
+# Download data.
+make download
+# Generate stats.
+make stats
 ```
 
 ## License
