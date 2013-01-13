@@ -1,9 +1,6 @@
-// Thanks to https://gist.github.com/2657075
-
 var fs = require('fs')
 var https = require('https')
 var GROUP_MAX = 1000
-
 
 exports.getPages = function(urls, stepCallback, finalCallback) {
   var totalCount = urls.length
@@ -74,7 +71,7 @@ exports.getPages = function(urls, stepCallback, finalCallback) {
 
 
 exports.writeStats = function(filename, stats) {
-  fs.writeFileSync(filename, JSON.stringify(stats, null, 2));
+  fs.writeFileSync(filename, JSON.stringify(stats, null, 2) + '\n');
   console.log('  Saved to ' + filename);
 }
 

@@ -1,7 +1,7 @@
 var utils = require('./utils');
 
-var stats = require('./temp-github-users-no-contribs.json');
 var MIN_CONTRIBUTIONS = 1;
+var stats = require('./temp-github-users-no-contribs.json');
 
 var parseContributions = function(html) {
   var m = html.match(/<span class="num">([\d,]+) Total<\/span>/) || []

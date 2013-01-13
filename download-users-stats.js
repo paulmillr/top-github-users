@@ -1,6 +1,7 @@
 var utils = require('./utils')
-var stats = {};
+
 var MAX_PAGES = 99;
+var stats = {};
 
 var parseField = function(regex, html) {
   var m = html.match(regex) || [];
@@ -24,7 +25,6 @@ var parseUserStats = function(username, partial) {
   return {
     username: username,
     aka: parseField(/<span class="aka"> - (.*)?<\/span>/, partial),
-    email: parseField(/<span class="email">\((.*)?\)<\/span>/, partial),
     gravatar: parseField(/<img height="30" src="(.*?)"/, partial),
     followers: parseNum(parseField(/([\d,]*) followers/, partial)),
     repositories: parseNum(parseField(/([\d,]*) repositories/, partial)),
