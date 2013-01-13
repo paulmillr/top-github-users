@@ -1,7 +1,7 @@
 var fs = require('fs')
 
 var stats2markdown = function(datafile, mdfile, title) {
-  var stats = require('./' + datafile)
+  var stats = require(datafile)
 
   var out = '# ' + title + '\n\n'
   out += 'GitHub has released [contributions](https://github.com/blog/1360-introducing-contributions) (summary of Pull Requests, opened issues and commits).\n\n'
@@ -12,10 +12,10 @@ var stats2markdown = function(datafile, mdfile, title) {
   out += 'This is the count of contributions to public repos at GitHub.com from **' + from.toGMTString() + '** till **' + today.toGMTString() + '**.\n\n'
 
   out += 'To repeat:\n\n'
-  out += '1. Take the first 1000 users in GitHub according to the count of followers (users with 150+ followers).\n'
+  out += '1. Take the first 1000 users in GitHub according to the count of followers (those with 150+ followers).\n'
   out += '2. Sort them by number of public contributions.\n\n'
 
-  out += 'Made with data mining of GitHub.com ([raw data & script](https://github.com/paulmillr/top-github-users)).\n\n'
+  out += 'Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)).\n\n'
   out += 'By [@paulmillr](https://github.com/paulmillr) & [@lifesinger](https://github.com/lifesinger).\n\n'
 
   out += '<table cellspacing="0"><thead>'
@@ -44,4 +44,4 @@ var stats2markdown = function(datafile, mdfile, title) {
   console.log('Saved to ' + mdfile);
 };
 
-stats2markdown('github-users-sorted-stats.json', 'github-users.md', 'Most active GitHub users');
+stats2markdown('./raw/github-users-stats.json', './formatted/active.md', 'Most active GitHub users');

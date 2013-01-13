@@ -73,7 +73,7 @@ exports.getPages = function(urls, stepCallback, finalCallback) {
 }
 
 
-exports.saveStats = function(filename, stats) {
+exports.writeStats = function(filename, stats) {
   fs.writeFileSync(filename, JSON.stringify(stats, null, 2));
   console.log('  Saved to ' + filename);
 }

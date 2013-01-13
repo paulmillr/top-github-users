@@ -1,4 +1,4 @@
-var util = require('./util');
+var utils = require('./utils');
 
 var sort = function(obj, total) {
   var swap = {};
@@ -35,7 +35,7 @@ var getLanguageStats = function(inputfile, outputfile) {
   });
 
   languages = (sort(languages, total));
-  util.saveStats(outputfile, languages);
+  utils.writeStats(outputfile, languages);
 };
 
-getLanguageStats('./github-users-sorted-stats.json', 'github-languages-stats.json');
+getLanguageStats('./raw/github-users-stats.json', './raw/github-languages-stats.json');
