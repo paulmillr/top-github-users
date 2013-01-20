@@ -16,7 +16,7 @@ var stats2markdown = function(datafile, mdfile, title) {
   out += '2. Sort them by number of public contributions.\n\n'
 
   out += 'Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)).\n\n'
-  out += 'By [@paulmillr](https://github.com/paulmillr) & [@lifesinger](https://github.com/lifesinger).\n\n'
+  out += 'By [@paulmillr](https://github.com/paulmillr) & [@lifesinger](https://github.com/lifesinger). Updated every sunday.\n\n'
 
   out += '<table cellspacing="0"><thead>'
   out += '<th scope="col">#</th>'
