@@ -41,7 +41,7 @@ stats2markdown = (datafile, mdfile, title) ->
       <td>#{stat.contributions}</td>
       <td>#{stat.language}</td>
       <td>#{stat.location}</td>
-      <td><img width="30" height="30" src="#{stat.gravatar.replace('?s=140', '?s=30')}"></td>
+      <td><img width="30" height="30" src="#{stat.gravatar.replace('?s=400', '?s=30')}"></td>
     </tr>
     """.replace(/\n/g, '')
 
