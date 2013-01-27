@@ -1,0 +1,20 @@
+{
+  "name": "top-github-users",
+  "version": "0.0.0",
+  "description": "[Generated stats](https://gist.github.com/2657075).",
+  "main": "convert-markdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulmillr/top-github-users.git"
+  },
+  "author": "Paul Miller",
+  "license": "MIT",
+  "gitHead": "e6a55ed9abd436d3c60323e6cc1d2b3ad6784abb",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "cheerio": "~0.10.5"
+  }
+}

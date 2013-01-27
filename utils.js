@@ -69,6 +69,26 @@ exports.getPages = function(urls, stepCallback, finalCallback) {
   }
 }
 
+exports.range = function(start, end, step) {
+  start = +start || 0;
+  step = +step || 1;
+
+  if (end == null) {
+    end = start;
+    start = 0;
+  }
+  // use `Array(length)` so V8 will avoid the slower "dictionary" mode
+  // http://youtu.be/XAqIpGU8ZZk#t=17m25s
+  var index = -1,
+      length = Math.max(0, Math.ceil((end - start) / step)),
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = start;
+    start += step;
+  }
+  return result;
+};
 
 exports.writeStats = function(filename, stats) {
   fs.writeFileSync(filename, JSON.stringify(stats, null, 2) + '\n');

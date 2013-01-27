@@ -1,9 +1,9 @@
 all: download stats
 
 download:
-	node download-users-stats.js
-	node download-users-contributions.js
+	coffee download-top-users.coffee
+	coffee download-users-stats.coffee
 
 stats:
-	node update-language-stats.js
-	node convert-markdown.js
+	coffee update-language-stats.coffee
+	coffee convert-markdown.coffee
