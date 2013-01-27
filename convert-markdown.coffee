@@ -19,7 +19,7 @@ stats2markdown = (datafile, mdfile, title) ->
   1. Take the first 1000 users in GitHub according to the count of followers those with 150+ followers).
   2. Sort them by number of public contributions.
 
-  Made with data mining of GitHub.com ([raw data](https://gist.githubcom/4524946), [script](https://github.com/paulmillr/top-github-users)).
+  Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)).
 
   By [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://githubcom/lifesinger). Updated every sunday.
 
