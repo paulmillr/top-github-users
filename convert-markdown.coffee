@@ -8,7 +8,7 @@ stats2markdown = (datafile, mdfile, title) ->
   from.setYear today.getFullYear() - 1
 
   out = """
-  # Most active GitHub users
+  # Most active GitHub users ([git.io/top](http://git.io/top))
 
   GitHub has released [contributions](https://github.com/blog/1360-introducing-contributions) (summary of Pull Requests, opened issues and commits).
 
