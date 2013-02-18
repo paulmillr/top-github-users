@@ -14,7 +14,7 @@ saveTopLogins = ->
     return
 
   searchUrls = utils.range(1, MAX_PAGES + 1).map (page) ->
-    "https://github.com/search?q=followers%3A%3E0&p=#{page}&ref=searchbar&type=Users"
+    "https://github.com/search?q=followers%3A>100&p=#{page}&ref=searchbar&type=Users&s=followers"
 
   utils.getPages searchUrls, parseUsersStats, ->
     utils.writeStats './temp-logins.json', users

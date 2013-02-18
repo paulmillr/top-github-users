@@ -10,7 +10,9 @@ getStats = (html, url) ->
   getInt = (text) -> parseInt text.replace ',', ''
   getOrgName = (index, item) -> $(item).attr('title')
   getFollowers = ->
-    parseInt $('.stats li:nth-child(1) a').text().replace 'k', '000'
+    text = $('.stats li:nth-child(1) a').text().trim()
+    multiplier = if text.indexOf('k') > 0 then 1000 else 1
+    (parseFloat text) * multiplier
 
   pageDesc = $('meta[name="description"]').attr('content')
 
