@@ -1,8 +1,10 @@
 # GitHub top users
 
-[Generated stats](https://gist.github.com/2657075).
+Generated stats: [git.io/top](http://git.io/top).
 
 ## Usage
+
+Make sure you’ve got node.js and coffeescript installed.
 
 ```bash
 # Download data.
