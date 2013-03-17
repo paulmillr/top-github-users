@@ -1,7 +1,7 @@
 utils = require './utils'
 
-getLanguageStats = (inputfile, outputfile) ->
-  stats = require inputfile
+getLanguageStats = (inputFile, outFile) ->
+  stats = require inputFile
   total = stats.length
   unsorted = Total: total
   stats.forEach (stat) ->
@@ -17,6 +17,6 @@ getLanguageStats = (inputfile, outputfile) ->
     .forEach (language) ->
       languages[language] = unsorted[language]
 
-  utils.writeStats outputfile, languages
+  utils.writeStats outFile, languages
 
 getLanguageStats './raw/github-users-stats.json', './raw/github-languages-stats.json'

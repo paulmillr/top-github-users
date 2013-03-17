@@ -7,10 +7,18 @@ Generated stats: [git.io/top](http://git.io/top).
 Make sure you’ve got node.js and coffeescript installed.
 
 ```bash
+# Install deps.
+npm install
+# Download and format everything.
+make
+
+# or
+
 # Download data.
-make download
+make get
+
 # Generate stats.
-make stats
+make format
 ```
 
 ## License

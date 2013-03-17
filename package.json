@@ -15,6 +15,8 @@
   "gitHead": "e6a55ed9abd436d3c60323e6cc1d2b3ad6784abb",
   "readmeFilename": "README.md",
   "dependencies": {
-    "cheerio": "~0.10.5"
+    "cheerio": "~0.10.5",
+    "superagent": "~0.13.0",
+    "batch": "~0.3.2"
   }
 }

@@ -1,9 +1,13 @@
-all: download stats
+all: get format
 
-download:
-	coffee download-top-users.coffee
-	coffee download-users-stats.coffee
+get: get-users get-stats
+get-users:
+	coffee get-users.coffee
+get-stats:
+	coffee get-stats.coffee
 
-stats:
-	coffee update-language-stats.coffee
-	coffee convert-markdown.coffee
+format: format-languages format-users
+format-languages:
+	coffee format-languages.coffee
+format-users:
+	coffee format-users.coffee

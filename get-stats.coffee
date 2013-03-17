@@ -1,7 +1,6 @@
 cheerio = require 'cheerio'
 utils = require './utils'
 
-
 stats = {}
 
 getStats = (html, url) ->
