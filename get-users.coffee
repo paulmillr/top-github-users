@@ -1,6 +1,3 @@
-cheerio = require 'cheerio'
-request = require 'superagent'
-Batch = require 'batch'
 fs = require 'fs'
 utils = require './utils'
 

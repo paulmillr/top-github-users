@@ -1,6 +1,4 @@
 cheerio = require 'cheerio'
-request = require 'superagent'
-Batch = require 'batch'
 utils = require './utils'
 
 stats = {}
