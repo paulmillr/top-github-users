@@ -1,4 +1,6 @@
 cheerio = require 'cheerio'
+request = require 'superagent'
+Batch = require 'batch'
 utils = require './utils'
 
 stats = {}
@@ -28,6 +30,7 @@ getStats = (html, url) ->
     contributionsCurrentStreak: getInt $('.contrib-streak-current > .num').text()
 
   stats[userStats.login] = userStats
+  userStats
 
 sortStats = (stats) ->
   minContributions = 1
@@ -42,7 +45,7 @@ sortStats = (stats) ->
 saveStats = ->
   logins = require './temp-logins.json'
   urls = logins.map (login) -> "https://github.com/#{login}"
-  utils.getPages urls, getStats, ->
+  utils.batchGet urls, getStats, ->
     utils.writeStats './raw/github-users-stats.json', sortStats stats
 
 saveStats()

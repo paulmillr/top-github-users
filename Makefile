@@ -1,13 +1,9 @@
 all: get format
 
-get: get-users get-stats
-get-users:
+get:
 	coffee get-users.coffee
-get-stats:
 	coffee get-stats.coffee
 
-format: format-languages format-users
-format-languages:
+format:
 	coffee format-languages.coffee
-format-users:
 	coffee format-users.coffee

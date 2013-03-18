@@ -1,4 +1,31 @@
-var fs = require('fs')
+var fs = require('fs');
+var Batch = require('batch');
+var request = require('superagent');
+
+var batchGet = exports.batchGet = function(urls, progressback, callback) {
+  var batch = new Batch;
+  batch.concurrency(5);
+  urls.forEach(function(url) {
+    batch.push(function(done) {
+      request.get(url, function(error, response) {
+        console.log(url);
+        if (error) return done(error);
+        var result;
+        try {
+          result = progressback(response.text);
+        } catch(e) {
+          error = e;
+        }
+        done(error, result);
+      });
+    });
+  });
+
+  batch.end(function(error, all) {
+    if (error) throw new Error(error);
+    callback(all);
+  });
+};
 
 exports.range = function(start, end, step) {
   start = +start || 0;
