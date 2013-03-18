@@ -1,7 +1,7 @@
 fs = require 'fs'
 
 stats2markdown = (datafile, mdfile, title) ->
-  stats = require datafile
+  stats = require(datafile).slice(0, 500)
 
   today = new Date()
   from = new Date()
@@ -10,18 +10,18 @@ stats2markdown = (datafile, mdfile, title) ->
   out = """
   # Most active GitHub users ([git.io/top](http://git.io/top))
 
-  GitHub has released [contributions](https://github.com/blog/1360-introducing-contributions) (summary of Pull Requests, opened issues and commits).
+  The count of contributions (summary of Pull Requests, opened issues and commits) to public repos at GitHub.com from **#{from.toGMTString()}** till **#{today.toGMTString()}**.
 
-  This is the count of contributions to public repos at GitHub.com from **#{from.toGMTString()}** till **#{today.toGMTString()}**.
+  Only first 1000 GitHub users according to the count of followers are taken. Sorting algo in pseudocode:
 
-  To repeat:
+  ```coffeescript
+  githubUsers
+    .filter((user) -> user.followers > 165)
+    .sortBy('contributions')
+    .slice(0, 500)
+  ```
 
-  1. Take the first 1000 users in GitHub according to the count of followers (only those with 165+ followers).
-  2. Sort them by number of public contributions.
-
-  Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)).
-
-  By [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://githubcom/lifesinger). Updated every sunday.
+  Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)) by [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://githubcom/lifesinger). Updated every sunday.
 
   <table cellspacing="0"><thead>
   <th scope="col">#</th>
