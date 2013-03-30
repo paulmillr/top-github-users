@@ -1,3 +1,4 @@
+#!/usr/bin/env coffee
 utils = require './utils'
 
 getLanguageStats = (inputFile, outFile) ->

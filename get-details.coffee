@@ -1,3 +1,4 @@
+#!/usr/bin/env coffee
 cheerio = require 'cheerio'
 utils = require './utils'
 
