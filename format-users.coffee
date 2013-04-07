@@ -38,7 +38,7 @@ stats2markdown = (datafile, mdfile, title) ->
 
   ```coffeescript
   githubUsers
-    .filter((user) -> user.followers > 167)
+    .filter((user) -> user.followers > 168)
     .sortBy('contributions')
     .slice(0, 500)
   ```
