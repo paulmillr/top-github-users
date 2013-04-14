@@ -23,7 +23,9 @@ top = (stats, field, type) ->
     .join ', '
 
 stats2markdown = (datafile, mdfile, title) ->
-  stats = require(datafile).slice(0, 500)
+  minFollowers = 168
+  maxNumber = 250
+  stats = require(datafile)
 
   today = new Date()
   from = new Date()
@@ -38,9 +40,9 @@ stats2markdown = (datafile, mdfile, title) ->
 
   ```coffeescript
   githubUsers
-    .filter((user) -> user.followers > 168)
+    .filter((user) -> user.followers > #{minFollowers})
     .sortBy('contributions')
-    .slice(0, 500)
+    .slice(0, #{maxNumber})
   ```
 
   Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)) by [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://githubcom/lifesinger). Updated every sunday.
@@ -55,7 +57,7 @@ stats2markdown = (datafile, mdfile, title) ->
   </thead><tbody>\n
   """
 
-  rows = stats.map (stat, index) ->
+  rows = stats.slice(0, maxNumber).map (stat, index) ->
     """
     <tr>
       <th scope="row">##{index + 1}</th>
