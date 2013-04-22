@@ -74,5 +74,10 @@ var reverseFind = function(list) {
   };
 };
 
+exports.prop = prop;
+exports.isNotIn = isNotIn;
+exports.diff = diff;
+exports.reverseFind = reverseFind;
+
 // diff(prev, curr).map(reverseFind(prev));
 // prev.map(prop('login')).filter(isNotIn(logins))

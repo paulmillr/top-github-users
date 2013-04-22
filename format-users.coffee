@@ -23,8 +23,8 @@ top = (stats, field, type) ->
     .join ', '
 
 stats2markdown = (datafile, mdfile, title) ->
-  minFollowers = 168
-  maxNumber = 250
+  minFollowers = 172
+  maxNumber = 256
   stats = require(datafile)
 
   today = new Date()
