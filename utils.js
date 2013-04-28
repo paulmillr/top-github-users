@@ -7,17 +7,21 @@ var batchGet = exports.batchGet = function(urls, progressback, callback) {
   batch.concurrency(5);
   urls.forEach(function(url) {
     batch.push(function(done) {
-      request.get(url, function(error, response) {
-        console.log(url);
-        if (error) return done(error);
-        var result;
-        try {
-          result = progressback(response.text);
-        } catch(e) {
-          error = e;
-        }
-        done(error, result);
-      });
+      request
+        .get(url)
+        .set('User-Agent', 'curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5')
+        .end(function(error, response) {
+          console.log(url);
+          if (error) throw new Error(error);
+          if (response.error) throw response.error;
+          var result;
+          try {
+            result = progressback(response.text);
+          } catch (err) {
+            error = err;
+          }
+          done(error, result);
+        });
     });
   });
 

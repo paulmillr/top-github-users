@@ -16,7 +16,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "cheerio": "~0.10.5",
-    "superagent": "~0.13.0",
+    "superagent": "~0.14.0",
     "batch": "~0.3.2"
   }
 }
