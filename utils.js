@@ -13,7 +13,13 @@ var batchGet = exports.batchGet = function(urls, progressback, callback) {
         .end(function(error, response) {
           console.log(url);
           if (error) throw new Error(error);
-          if (response.error) throw response.error;
+          if (response.error) {
+            if (response.status === 404) {
+              done();
+            } else {
+              throw response.error;
+            }
+          }
           var result;
           try {
             result = progressback(response.text);
