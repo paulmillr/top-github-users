@@ -1,12 +1,14 @@
+#!/usr/bin/env coffee
 utils = require './utils'
 fs = require 'fs'
-data = require './raw/github-users-stats'
-prev = require './old-logins'
-curr = require './temp-logins'
+data = require './raw/github-users-stats.json'
+prev = require './old-logins.json'
+curr = require './temp-logins.json'
 
 filtered = prev
   .filter(utils.isNotIn(curr))
   .map(utils.reverseFind(data))
+  .filter((_) -> _)
   .map (_) ->
     login: _.login, followers: _.followers
   .sort (a, b) ->

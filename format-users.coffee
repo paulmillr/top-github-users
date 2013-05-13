@@ -23,7 +23,7 @@ top = (stats, field, type) ->
     .join ', '
 
 stats2markdown = (datafile, mdfile, title) ->
-  minFollowers = 172
+  minFollowers = 176
   maxNumber = 256
   stats = require(datafile)
 
