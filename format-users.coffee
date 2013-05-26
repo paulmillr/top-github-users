@@ -36,7 +36,8 @@ stats2markdown = (datafile, mdfile, title) ->
 
   The count of contributions (summary of Pull Requests, opened issues and commits) to public repos at GitHub.com from **#{from.toGMTString()}** till **#{today.toGMTString()}**.
 
-  Only first 1000 GitHub users according to the count of followers are taken. Sorting algo in pseudocode:
+  Only first 1000 GitHub users according to the count of followers are taken.
+  This is because of limitations of GitHub search. Sorting algo in pseudocode:
 
   ```coffeescript
   githubUsers
