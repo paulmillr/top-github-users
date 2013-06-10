@@ -1,8 +1,8 @@
 {
   "name": "top-github-users",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "[Generated stats](https://gist.github.com/2657075).",
-  "main": "convert-markdown.js",
+  "main": "utils.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
