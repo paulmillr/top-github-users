@@ -2,6 +2,10 @@
 fs = require 'fs'
 utils = require './utils'
 
+DISQUALIFIED = [
+  'gugod' # 7K commits in 4 days.
+]
+
 saveTopLogins = ->
   MIN_FOLLOWERS = 188
   MAX_PAGES = 10
@@ -13,6 +17,8 @@ saveTopLogins = ->
 
   utils.batchGet urls, parse, (all) ->
     logins = [].concat.apply [], all
-    utils.writeStats './temp-logins.json', logins
+    filtered = logins.filter (name) ->
+      name not in DISQUALIFIED
+    utils.writeStats './temp-logins.json', filtered
 
 saveTopLogins()
