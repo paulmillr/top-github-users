@@ -23,7 +23,7 @@ top = (stats, field, type) ->
     .join ', '
 
 stats2markdown = (datafile, mdfile, title) ->
-  minFollowers = 188
+  minFollowers = 200
   maxNumber = 256
   stats = require(datafile)
 
@@ -46,7 +46,7 @@ stats2markdown = (datafile, mdfile, title) ->
     .slice(0, #{maxNumber})
   ```
 
-  Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)) by [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://githubcom/lifesinger). Updated every sunday.
+  Made with data mining of GitHub.com ([raw data](https://gist.github.com/4524946), [script](https://github.com/paulmillr/top-github-users)) by [@paulmillr](https://github.com/paulmillr) with contribs of [@lifesinger](https://github.com/lifesinger). Updated once per week.
 
   <table cellspacing="0"><thead>
   <th scope="col">#</th>
