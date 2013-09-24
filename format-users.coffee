@@ -1,6 +1,13 @@
 #!/usr/bin/env coffee
 fs = require 'fs'
 
+# Reducer.
+minimum = (min, current) ->
+  if current < min
+    current
+  else
+    min
+
 top = (stats, field, type) ->
   get = (stat) ->
     value = stat[field]
@@ -23,9 +30,9 @@ top = (stats, field, type) ->
     .join ', '
 
 stats2markdown = (datafile, mdfile, title) ->
-  minFollowers = 200
-  maxNumber = 256
   stats = require(datafile)
+  minFollowers = stats.map((_) -> _.followers).reduce(minimum, 1000)
+  maxNumber = 256
 
   today = new Date()
   from = new Date()
