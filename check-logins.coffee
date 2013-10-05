@@ -14,5 +14,6 @@ filtered = prev
   .sort (a, b) ->
     b.followers - a.followers
 
+console.log 'Filtered logins:'
 console.log filtered
 console.log JSON.stringify filtered.map(utils.prop 'login'), null, 2
