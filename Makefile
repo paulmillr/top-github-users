@@ -8,6 +8,15 @@ format:
 	coffee format-languages.coffee
 	coffee format-users.coffee
 
-sync:
-	cd raw && git commit -am 'Update stats.' && git push && \
-	cd ../formatted && git commit -am 'Sync.' --amend && git push --force
+sync: sync-raw sync-formatted
+force-sync: force-sync-raw sync-formatted
+
+sync-raw:
+	cd raw && git commit -am 'Update stats.' --amend && git push --force
+
+force-sync-raw:
+	cd raw && git commit -am 'Update stats.' && git push
+
+sync-formatted:
+	cd formatted && git commit -am 'Sync.' --amend && git push --force
+
