@@ -1,12 +1,16 @@
-all: get format
-
-get:
+1:
+	mv temp-logins.json old-logins.json
 	coffee get-users.coffee
+	coffee check-logins.coffee
+
+2:
 	coffee get-details.coffee
 
-format:
+3:
 	coffee format-languages.coffee
 	coffee format-users.coffee
+
+4: sync-raw sync-formatted
 
 sync: sync-raw sync-formatted
 force-sync: force-sync-raw sync-formatted
