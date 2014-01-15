@@ -3,9 +3,10 @@ fs = require 'fs'
 utils = require './utils'
 
 DISQUALIFIED = [
-  'gugod'        # 7K commits in 4 days.
-  'sindresorhus' # Asked to remove himself from the list.
-  'funkenstein'  # Appears in the list even though he has 30 followers (bug).
+  'gugod'         # 7K commits in 4 days.
+  'sindresorhus'  # Asked to remove himself from the list.
+  'funkenstein'   # Appears in the list even though he has 30 followers (bug).
+  'scottgonzalez' # Contribution graffiti.
 ]
 
 saveTopLogins = ->
