@@ -10,7 +10,7 @@ DISQUALIFIED = [
 ]
 
 saveTopLogins = ->
-  MIN_FOLLOWERS = 232
+  MIN_FOLLOWERS = 235
   MAX_PAGES = 10
   urls = utils.range(1, MAX_PAGES + 1).map (page) ->
     "https://api.github.com/legacy/user/search/followers:%3E#{MIN_FOLLOWERS}?sort=followers&order=desc&start_page=#{page}"
