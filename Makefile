@@ -1,5 +1,5 @@
 1:
-	mv temp-logins.json old-logins.json
+	if [ -e temp-logins.json ]; then mv temp-logins.json old-logins.json; fi;
 	coffee get-users.coffee
 	coffee check-logins.coffee
 
