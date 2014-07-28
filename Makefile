@@ -1,7 +1,7 @@
 1:
 	if [ -e temp-logins.json ]; then mv temp-logins.json old-logins.json; fi;
 	coffee get-users.coffee
-	coffee check-logins.coffee
+	if [ -e raw/github-users-stats.json ]; then coffee check-logins.coffee; fi;
 
 2:
 	coffee get-details.coffee
