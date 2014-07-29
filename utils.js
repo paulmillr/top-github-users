@@ -17,7 +17,7 @@ var batchGet = exports.batchGet = function(urls, progressback, callback) {
             if (response.status === 404) {
               done();
             } else {
-              throw response.error;
+              throw [response.error,response.text].join("\n");
             }
           }
           var result;

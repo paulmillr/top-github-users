@@ -1,7 +1,12 @@
+all: get format
+get: 1 2
+format: 3
+
 1:
 	if [ -e temp-logins.json ]; then mv temp-logins.json old-logins.json; fi;
 	coffee get-users.coffee
-	if [ -e raw/github-users-stats.json ]; then coffee check-logins.coffee; fi;
+	# for debug - requires get-users.coffee/get-details.coffee already ran:
+	#coffee check-logins.coffee
 
 2:
 	coffee get-details.coffee
@@ -24,3 +29,9 @@ force-sync-raw:
 sync-formatted:
 	cd formatted && git commit -am 'Sync.' --amend && git push --force
 
+clean:
+	rm temp-logins.json
+	rm old-logins.json
+	rm raw/github-languages-stats.json
+	rm raw/github-users-stats.json
+	rm formatted/active.md
