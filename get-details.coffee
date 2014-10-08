@@ -23,10 +23,10 @@ getStats = (html, url) ->
     language: (/\sin ([\w-]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
-    contributions: getInt $('.contrib-day > .num').text()
-    contributionsStreak: getInt $('.contrib-streak > .num').text()
-    contributionsCurrentStreak: getInt $('.contrib-streak-current > .num').text()
     organizations: $('#site-container > div > div > div.column.one-fourth.vcard > div.clearfix > a').toArray().map(getOrgName)
+    contributions: getInt $('#contributions-calendar > div:nth-child(3) > span.contrib-number').text()
+    contributionsStreak: getInt $('#contributions-calendar > div:nth-child(4) > span.contrib-number').text()
+    contributionsCurrentStreak: getInt $('#contributions-calendar > div:nth-child(5) > span.contrib-number').text()
 
   stats[userStats.login] = userStats
   userStats
