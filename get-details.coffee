@@ -8,7 +8,7 @@ getStats = (html, url) ->
   $ = cheerio.load html
   byProp = (field) -> $("[itemprop='#{field}']")
   getInt = (text) -> parseInt text.replace ',', ''
-  getOrgName = (item) -> $(item).attr('title')
+  getOrgName = (item) -> $(item).attr('aria-label')
   getFollowers = ->
     text = $('.vcard-stats > a:nth-child(1) > .vcard-stat-count').text().trim()
     multiplier = if text.indexOf('k') > 0 then 1000 else 1
@@ -23,10 +23,10 @@ getStats = (html, url) ->
     language: (/\sin ([\w-]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
-    organizations: $('.vcard-orgs .vcard-org-avatar').toArray().map(getOrgName)
     contributions: getInt $('.contrib-day > .num').text()
     contributionsStreak: getInt $('.contrib-streak > .num').text()
     contributionsCurrentStreak: getInt $('.contrib-streak-current > .num').text()
+    organizations: $('#site-container > div > div > div.column.one-fourth.vcard > div.clearfix > a').toArray().map(getOrgName)
 
   stats[userStats.login] = userStats
   userStats
