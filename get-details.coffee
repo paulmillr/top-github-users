@@ -20,7 +20,7 @@ getStats = (html, url) ->
     name: byProp('name').text().trim()
     login: byProp('additionalName').text().trim()
     location: byProp('homeLocation').text().trim()
-    language: (/\sin ([\w-]+)/.exec(pageDesc)?[1] ? '')
+    language: (/\sin ([\w-+#\s\(\)]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
     organizations: $('#site-container > div > div > div.column.one-fourth.vcard > div.clearfix > a').toArray().map(getOrgName)
