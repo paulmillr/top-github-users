@@ -9,7 +9,6 @@ BANNED = [
   'beberlei'      # 1.7K contribs every day
   'IonicaBizau'   # Contribution graffiti.
   'scottgonzalez' # Contribution graffiti.
-  'addyosmani'    # Contribution graffiti.
 ]
 
 saveTopLogins = ->
