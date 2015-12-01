@@ -46,9 +46,9 @@ stats2markdown = (datafile, mdfile, title) ->
   Only first 1000 GitHub users according to the count of followers are taken.
   This is because of limitations of GitHub search. Sorting algo in pseudocode:
 
-  ```coffeescript
+  ```javascript
   githubUsers
-    .filter((user) -> user.followers > #{minFollowers})
+    .filter(user => user.followers > #{minFollowers})
     .sortBy('contributions')
     .slice(0, #{maxNumber})
   ```

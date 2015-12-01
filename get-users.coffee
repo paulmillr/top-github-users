@@ -8,7 +8,8 @@ BANNED = [
   'funkenstein'   # Appears in the list even though he has 30 followers (bug).
   'beberlei'      # 1.7K contribs every day
   'IonicaBizau'   # Contribution graffiti.
-  'scottgonzalez' # Contribution graffiti.
+  'scottgonzalez' # Graffiti.
+  'AutumnsWind'   # Graffiti.
 ]
 
 saveTopLogins = ->
