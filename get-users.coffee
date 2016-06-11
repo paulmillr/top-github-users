@@ -10,6 +10,7 @@ BANNED = [
   'IonicaBizau'   # Contribution graffiti.
   'scottgonzalez' # Graffiti.
   'AutumnsWind'   # Graffiti.
+  'hintjens'      # Graffiti.
 ]
 
 saveTopLogins = ->

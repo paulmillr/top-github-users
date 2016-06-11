@@ -59,7 +59,7 @@ stats2markdown = (datafile, mdfile, title) ->
   <th scope="col">#</th>
   <th scope="col">User</th>
   <th scope="col">Contribs</th>
-  <th scope="col">Language</th>
+  <!-- Language currently disabled: GitHub returns 'Shell' for most users <th scope="col">Language</th> -->
   <th scope="col">Location</th>
   <th scope="col" width="30"></th>
   </thead><tbody>\n
@@ -72,7 +72,7 @@ stats2markdown = (datafile, mdfile, title) ->
       <th scope="row">##{index + 1}</th>
       <td><a href="https://github.com/#{stat.login}">#{stat.login}</a>#{if stat.name then ' (' + stat.name + ')' else ''}</td>
       <td>#{stat.contributions}</td>
-      <td>#{stat.language}</td>
+      <!-- <td>#{stat.language}</td> -->
       <td>#{stat.location}</td>
       <td><img width="30" height="30" src="#{stat.gravatar.replace('?s=400', '?s=30')}"></td>
     </tr>
@@ -83,7 +83,6 @@ stats2markdown = (datafile, mdfile, title) ->
   out += """## Top 10 users from this list by other metrics:
 
 * **Followers:** #{top stats, 'followers', 'thousands'}
-* **Current contributions streak:** #{top stats, 'contributionsCurrentStreak'}
 * **Organisations:** #{top stats, 'organizations', 'list'}
   """
 
