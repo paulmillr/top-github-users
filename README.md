@@ -21,6 +21,18 @@ make get
 make format
 ```
 
+or use a Docker container:
+
+```
+# Build the image
+docker build -t top .
+
+# Run the image
+docker run -i -t -v ~/data/formatted:/app/formatted -v ~/data/raw:/app/raw top
+
+# ...and the output will be in ~/data.
+```
+
 ## License
 
 The MIT License (MIT)
