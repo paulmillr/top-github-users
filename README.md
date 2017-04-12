@@ -9,6 +9,7 @@ Make sure you’ve got node.js and coffeescript installed.
 ```bash
 # Install deps.
 npm install
+npm install coffee-script
 # Download and format everything.
 make
 
