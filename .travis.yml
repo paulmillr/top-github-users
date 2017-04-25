@@ -4,8 +4,11 @@ install:
   - npm install
 
 script:
-
+  - make
+  # Download data
+  - make get
+  # Generate stats
+  - make format
 
 notifications:
   email: false
-
