@@ -1,0 +1,11 @@
+language: javascript
+
+install:
+  - npm install
+
+script:
+
+
+notifications:
+  email: false
+
