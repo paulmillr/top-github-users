@@ -24,7 +24,7 @@ getStats = (html, url) ->
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
     organizations: $('#js-pjax-container > div > div > div.column.one-fourth.vcard > div.clearfix > a').toArray().map(getOrgName)
-    contributions: getInt $('#js-pjax-container > div > div > div.column.three-fourths > div.js-repo-filter.position-relative > div > div.boxed-group.flush > h3').text().trim().split(' ')[0]
+    contributions: getInt $('div.js-contribution-graph > h2').text().trim().split(' ')[0]
 
   stats[userStats.login] = userStats
   userStats
