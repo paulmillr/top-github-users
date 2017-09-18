@@ -9,8 +9,9 @@ getStats = (html, url) ->
   byProp = (field) -> $("[itemprop='#{field}']")
   getInt = (text) -> parseInt text.replace ',', ''
   getOrgName = (item) -> $(item).attr('aria-label')
+  login = byProp('additionalName').text().trim()
   getFollowers = ->
-    text = $('.vcard-stats > a:nth-child(1) > .vcard-stat-count').text().trim()
+    text = $("a[href=\"/#{login}?tab=followers\"] > .Counter").text().trim()
     multiplier = if text.indexOf('k') > 0 then 1000 else 1
     (parseFloat text) * multiplier
 
@@ -18,7 +19,7 @@ getStats = (html, url) ->
 
   userStats =
     name: byProp('name').text().trim()
-    login: byProp('additionalName').text().trim()
+    login: login
     location: byProp('homeLocation').text().trim()
     language: (/\sin ([\w-+#\s\(\)]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
