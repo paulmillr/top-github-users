@@ -24,7 +24,7 @@ getStats = (html, url) ->
     language: (/\sin ([\w-+#\s\(\)]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
-    organizations: $('#js-pjax-container > div > div > div.column.one-fourth.vcard > div.clearfix > a').toArray().map(getOrgName)
+    organizations: $('h2:contains("Organizations") ~ a').toArray().map(getOrgName)
     contributions: getInt $('div.js-contribution-graph > h2').text().trim().split(' ')[0]
 
   stats[userStats.login] = userStats
