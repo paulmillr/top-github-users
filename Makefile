@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+PATH := ./node_modules/.bin:$(PATH)
 all: get format
 get: 1 2
 format: 3

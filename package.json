@@ -18,5 +18,8 @@
     "cheerio": "~0.10.5",
     "superagent": "~0.14.0",
     "batch": "~0.3.2"
+  },
+  "devDependencies": {
+    "coffeescript": "^1.12.7"
   }
 }
