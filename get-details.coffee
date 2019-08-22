@@ -25,8 +25,8 @@ getStats = (html, url) ->
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
     organizations: $('h2:contains("Organizations") ~ a').toArray().map(getOrgName)
-    contributions: getInt $('div.js-contribution-graph > h2').text().trim().split(' ')[0]
-
+    contributions: getInt $('div.position-relative > h2.f4.text-normal.mb-2').text().trim().split(' ')[0]
+ 
   stats[userStats.login] = userStats
   userStats
 
