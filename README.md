@@ -5,7 +5,6 @@ Generated stats: [git.io/top](http://git.io/top).
 ## Usage
 
 Make sure you’ve got node.js and coffeescript installed.
-
 ```bash
 # Install deps.
 npm install
