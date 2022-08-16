@@ -1,4 +1,15 @@
-# Numerous always-ignore extensions
+# Install deps.
+npm install
+# Download and format everything.
+make
+
+# or
+
+# Download data.
+make get
+
+# Generate stats.
+make format# Numerous always-ignore extensions
 *.diff
 *.err
 *.orig
