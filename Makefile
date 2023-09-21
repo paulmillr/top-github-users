@@ -4,16 +4,16 @@ format: 3
 
 1:
 	if [ -e temp-logins.json ]; then mv temp-logins.json old-logins.json; fi;
-	coffee get-users.coffee
+	npx coffee get-users.coffee
 	# for debug - requires get-users.coffee/get-details.coffee already ran:
-	#coffee check-logins.coffee
+	#npx coffee check-logins.coffee
 
 2:
-	coffee get-details.coffee
+	npx coffee get-details.coffee
 
 3:
-	coffee format-languages.coffee
-	coffee format-users.coffee
+	npx coffee format-languages.coffee
+	npx coffee format-users.coffee
 
 4: sync-raw sync-formatted
 
