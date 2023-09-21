@@ -8,10 +8,26 @@ BANNED = [
   'funkenstein'   # Appears in the list even though he has 30 followers (bug).
   'beberlei'      # 1.7K contribs every day
   'IonicaBizau'   # Contribution graffiti.
-  'scottgonzalez' # Graffiti.
-  'AutumnsWind'   # Graffiti.
-  'hintjens'      # Graffiti.
-  'meehawk'       # Graffiti.
+  'scottgonzalez'
+  'AutumnsWind'
+  'hintjens'
+  'meehawk'
+  'BaseMax'       # Private contributions.
+  'sibelius'
+  'yegor256'
+  'kamranahmedse'
+  'skydoves'
+  'draveness'
+  'ryanb'
+  'shiftkey'
+  'hkirat'
+  'Ebazhanov'
+  'steven-tey'
+  'somekindofwallflower'
+  'koush'
+  'mitchellh'
+  # 'ice1000'      # can't ban, they're into some mad stuff
+  #'bradfitz'
 ]
 
 saveTopLogins = ->
