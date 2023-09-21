@@ -17,7 +17,7 @@ saveTopLogins = ->
   MIN_FOLLOWERS = 435
   MAX_PAGES = 10
   urls = utils.range(1, MAX_PAGES + 1).map (page) -> [
-      "https://api.github.com/search/users?q=followers:%3E#{MIN_FOLLOWERS}+sort:followers&per_page=100"
+      "https://api.github.com/search/users?q=followers:%3E#{MIN_FOLLOWERS}+sort:followers+type:user&per_page=100"
       "&page=#{page}"
     ].join('')
 

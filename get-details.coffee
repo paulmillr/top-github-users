@@ -11,7 +11,7 @@ getStats = (html, url) ->
   getOrgName = (item) -> $(item).attr('aria-label')
   login = byProp('additionalName').text().trim()
   getFollowers = ->
-    text = $("a[href=\"/#{login}?tab=followers\"] > .Counter").text().trim()
+    text = $("a[href=\"https://github.com/#{login}?tab=followers\"] > .text-bold").text().trim()
     multiplier = if text.indexOf('k') > 0 then 1000 else 1
     (parseFloat text) * multiplier
 
@@ -24,7 +24,7 @@ getStats = (html, url) ->
     language: (/\sin ([\w-+#\s\(\)]+)/.exec(pageDesc)?[1] ? '')
     gravatar: byProp('image').attr('href')
     followers: getFollowers()
-    organizations: $('h2:contains("Organizations") ~ a').toArray().map(getOrgName)
+    organizations: $('.p-org').text().trim()
     contributions: getInt $('div.position-relative > h2.f4.text-normal.mb-2').text().trim().split(' ')[0]
  
   stats[userStats.login] = userStats
